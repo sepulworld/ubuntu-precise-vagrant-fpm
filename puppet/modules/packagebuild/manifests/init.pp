@@ -59,4 +59,8 @@ class packagebuild {
     ensure  => latest,
   }
 
+  package { 'mono-gmcs':
+    ensure => latest,
+  }
+
 }
