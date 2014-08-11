@@ -11,7 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virutalbox" do |v|
     v.memory = 4096
     v.cpus = 4
-
+  end
 # Puppet
   
   config.vm.synced_folder "puppet/modules", "/tmp/vagrant-puppet/puppet/modules"
