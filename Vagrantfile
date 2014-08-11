@@ -7,9 +7,9 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "precise64"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  config.vm.synced_folder "./built_package", "/vagrant_data"
-  config.vm.provider "virutalbox" do |v|
-    v.memory = 4096
+  config.vm.synced_folder "./built_package", "/vagrant_data/built_package"
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
     v.cpus = 4
   end
 # Puppet

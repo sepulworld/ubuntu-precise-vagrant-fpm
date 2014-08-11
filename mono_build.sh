@@ -18,3 +18,4 @@ make check
 rm -rf /tmp/installdir && mkdir -p /tmp/installdir
 make install DESTDIR=/tmp/installdir && cd ..
 fpm --after-install /root/mono-link-update.sh -s dir -t deb -n mono -v ${VERSION}-git-tag-${BUILD_DATE} -C /tmp/installdir usr/local
+cp *.deb /vagrant_data/built_package
