@@ -20,4 +20,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     puppet.options = ["--modulepath", "/tmp/vagrant-puppet/puppet/modules"]
     puppet.manifest_file  = "site.pp"
   end
+  config.vm.provision :shell, :path => "mono_build.sh"
+
 end

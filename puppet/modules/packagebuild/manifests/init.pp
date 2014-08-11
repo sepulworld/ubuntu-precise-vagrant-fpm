@@ -61,7 +61,7 @@ class packagebuild {
 
   # Mono build requirements
 
-  $mono_build_essentials = [ 'mono-gmcs', 'xsltproc', 'automake', 'gettext', 'libtool' ]
+  $mono_build_essentials = [ 'mono-gmcs', 'mono-complete', 'xsltproc', 'automake', 'gettext', 'libtool' ]
 
   package { $mono_build_essentials: 
     ensure => latest,
