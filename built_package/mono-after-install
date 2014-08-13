@@ -1,0 +1,34 @@
+#!/bin/bash
+
+error_ssl_exit () {
+        echo "ERROR IMPORTING SSL CERT!"
+        echo "$1" 1>&2
+        exit 1
+}
+
+error_exit () {
+	echo "$1" 1>&2
+	exit 1
+}
+
+echo "Updating mono-sgen symlink..."
+
+unlink /usr/local/bin/mono || error_exit
+ln -s /usr/local/bin/mono-sgen /usr/local/bin/mono || error_exit
+
+echo "mono-sgen symlink updated successfully"
+echo ""
+echo "Updating Mono SSL trusted certs..."
+
+mozroots --import --ask-remove || error_ssl_exit
+mozroots --import --ask-remove --machine || error_ssl_exit
+
+yes | certmgr -ssl -m https://itunes-api.performancehorizon.com || error_ssl_exit
+yes | certmgr -ssl https://itunes-api.performancehorizon.com || error_ssl_exit
+yes | certmgr -ssl -m https://itunes.apple.com || error_ssl_exit
+yes | certmgr -ssl https://itunes.apple.com || error_ssl_exit
+
+echo ""
+echo "##########"
+echo "Mono SSL trusted certs updated successfully!"
+echo "##########"

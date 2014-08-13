@@ -61,7 +61,8 @@ class packagebuild {
 
   # Mono build requirements
 
-  $mono_build_essentials = [ 'mono-gmcs', 'mono-complete', 'xsltproc', 'automake', 'gettext', 'libtool' ]
+  $mono_build_essentials = [ 'mono-gmcs', 'mono-complete', 'xsltproc', 'automake', 'gettext', 'libtool', 'autoconf', 'g++', 'libglib2.0-dev', 'libpng12-dev',
+                             'libfreetype6-dev', 'libfontconfig1-dev', 'libx11-dev', 'libtiff5-dev', 'libjpeg8-dev', 'libgif-dev', 'libexif-dev' ]
 
   package { $mono_build_essentials: 
     ensure => latest,
