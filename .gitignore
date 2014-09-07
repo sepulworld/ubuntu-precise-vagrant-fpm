@@ -1,4 +1,4 @@
 .tmp
 .librarian
 .vagrant
-.deb
+built_package/*.deb
