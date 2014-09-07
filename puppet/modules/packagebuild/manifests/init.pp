@@ -64,7 +64,13 @@ class packagebuild {
   $mono_build_essentials = [ 'mono-runtime', 'xsltproc', 'automake', 'gettext', 'libtool', 'autoconf', 'g++', 'libglib2.0-dev', 'libpng12-dev',
                              'libfreetype6-dev', 'libfontconfig1-dev', 'libx11-dev', 'libjpeg8-dev', 'libgif-dev', 'libexif-dev' ]
 
+  $mongodb_build = [ 'scons', 'libssl-dev' ]
+
   package { $mono_build_essentials: 
+    ensure => latest,
+  }
+
+  package { $mongodb_build:
     ensure => latest,
   }
 
