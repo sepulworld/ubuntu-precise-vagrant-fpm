@@ -4,7 +4,13 @@
 CHECKOUT='mono-3.8.0'
 VERSION='3.8.0'
 BUILD_DATE=`date +%d%m%Y`
-BIT_LEVEL='64bit'
+MACHINE_TYPE=`uname -m`
+if [ ${MACHINE_TYPE} == 'x86_64' ]; then
+  BIT_LEVEL=64bit
+else
+  BIT_LEVEL=32bit 
+fi
+
 
 cd /vagrant_data/
 
