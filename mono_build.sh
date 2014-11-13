@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Build Variables
-CHECKOUT='mono-3.8.0'
-VERSION='3.8.0'
-BUILD_DATE='09042014'
+CHECKOUT='mono-3.10.0'
+VERSION='3.10.0'
+BUILD_DATE='11132014'
 BIT_LEVEL='64bit'
 
 cd /vagrant_data/
